@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">InfraStructure</string>
+    <string name="loading_your_data">Loading your data</string>
+    <string name="response_error">Response error</string>
+</resources>
