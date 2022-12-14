@@ -5,7 +5,7 @@
 
         <variable
             name="eventFavorites"
-            type="elior.com.infrastructure.room.EventsFavorites" />
+            type="elior.com.infrastructure.data.room.EventsRoom" />
     </data>
 
     <LinearLayout

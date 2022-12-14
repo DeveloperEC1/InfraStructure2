@@ -1,4 +1,4 @@
-package elior.com.infrastructure.pages.fragments;
+package elior.com.infrastructure.presentation.pages.fragments;
 
 import android.app.Activity;
 import android.app.ProgressDialog;

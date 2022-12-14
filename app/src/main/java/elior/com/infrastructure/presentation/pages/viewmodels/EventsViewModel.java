@@ -1,8 +1,6 @@
-package elior.com.infrastructure.viewmodels;
+package elior.com.infrastructure.presentation.pages.viewmodels;
 
-import static elior.com.infrastructure.retrofit.RetrofitClientInstance.getRetrofitClientInstance;
-
-import android.app.Application;
+import static elior.com.infrastructure.data.retrofit.RetrofitClientInstance.getRetrofitClientInstance;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
@@ -10,11 +8,11 @@ import androidx.lifecycle.ViewModel;
 
 import java.util.ArrayList;
 
-import elior.com.infrastructure.fragstates.EventsFragState;
-import elior.com.infrastructure.models.Events;
-import elior.com.infrastructure.others.Constants;
-import elior.com.infrastructure.room.EventsFavorites;
-import elior.com.infrastructure.room.EventsViewModelFavorites;
+import elior.com.infrastructure.data.fragstates.EventsFragState;
+import elior.com.infrastructure.data.models.Events;
+import elior.com.infrastructure.core.Constants;
+import elior.com.infrastructure.data.room.EventsRoom;
+import elior.com.infrastructure.data.room.EventsViewModelRoom;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -62,9 +60,9 @@ public class EventsViewModel extends ViewModel {
     }
 
     public void saveToLocalData() {
-        EventsViewModelFavorites eventsViewModelFavorites = new EventsViewModelFavorites();
+        EventsViewModelRoom eventsViewModelFavorites = new EventsViewModelRoom();
 
-        EventsFavorites eventsFavorites = new EventsFavorites();
+        EventsRoom eventsFavorites = new EventsRoom();
 
         for (Events events : getDummyData()) {
             eventsFavorites.setActivity(events.getActivity());

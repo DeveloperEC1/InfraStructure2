@@ -1,4 +1,4 @@
-package elior.com.infrastructure.adapters;
+package elior.com.infrastructure.presentation.adapters;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -10,27 +10,28 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import elior.com.infrastructure.R;
+import elior.com.infrastructure.data.room.EventsRoom;
 import elior.com.infrastructure.databinding.AdapterEventsFavoritesBinding;
-import elior.com.infrastructure.room.EventsFavorites;
+import elior.com.infrastructure.presentation.adapters.viewholders.EventsFavoritesViewHolder;
 
-public class EventsFavoritesAdapter extends RecyclerView.Adapter<ViewHolderFavorites> {
+public class EventsFavoritesAdapter extends RecyclerView.Adapter<EventsFavoritesViewHolder> {
 
-    private final ArrayList<EventsFavorites> eventsFavoritesArrayList;
+    private final ArrayList<EventsRoom> eventsFavoritesArrayList;
 
-    public EventsFavoritesAdapter(ArrayList<EventsFavorites> eventsFavoritesArrayList) {
+    public EventsFavoritesAdapter(ArrayList<EventsRoom> eventsFavoritesArrayList) {
         this.eventsFavoritesArrayList = eventsFavoritesArrayList;
     }
 
     @NonNull
     @Override
-    public ViewHolderFavorites onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public EventsFavoritesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         AdapterEventsFavoritesBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.adapter_events_favorites, parent, false);
-        return new ViewHolderFavorites(binding);
+        return new EventsFavoritesViewHolder(binding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolderFavorites holder, final int position) {
-        EventsFavorites eventFavorites = eventsFavoritesArrayList.get(position);
+    public void onBindViewHolder(@NonNull EventsFavoritesViewHolder holder, final int position) {
+        EventsRoom eventFavorites = eventsFavoritesArrayList.get(position);
 
         holder.binding.setEventFavorites(eventFavorites);
     }

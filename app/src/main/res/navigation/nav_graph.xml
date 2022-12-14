@@ -15,7 +15,7 @@
 
         <fragment
             android:id="@+id/main_fragment"
-            android:name="elior.com.infrastructure.pages.fragments.MainFragment"
+            android:name="elior.com.infrastructure.presentation.pages.fragments.MainFragment"
             tools:layout="@layout/fragment_main" />
     </navigation>
 
@@ -25,11 +25,11 @@
 
         <argument
             android:name="eventsData"
-            app:argType="elior.com.infrastructure.models.Events" />
+            app:argType="elior.com.infrastructure.data.models.Events" />
 
         <fragment
             android:id="@+id/favorites_fragment"
-            android:name="elior.com.infrastructure.pages.fragments.FavoritesFragment"
+            android:name="elior.com.infrastructure.presentation.pages.fragments.FavoritesFragment"
             tools:layout="@layout/fragment_favorites" />
     </navigation>
 </navigation>

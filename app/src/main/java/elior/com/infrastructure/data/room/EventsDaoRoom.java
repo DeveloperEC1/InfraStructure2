@@ -1,4 +1,4 @@
-package elior.com.infrastructure.room;
+package elior.com.infrastructure.data.room;
 
 import java.util.List;
 
@@ -11,21 +11,21 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 @Dao
-public interface EventsDaoFavorites {
+public interface EventsDaoRoom {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insert(EventsFavorites eventsFavorites);
+    void insert(EventsRoom eventsFavorites);
 
     @Update
-    void update(EventsFavorites... eventsFavorites);
+    void update(EventsRoom... eventsFavorites);
 
     @Delete
-    void delete(EventsFavorites eventsFavorites);
+    void delete(EventsRoom eventsFavorites);
 
     @Query("DELETE FROM table_events")
     void deleteAll();
 
     @Query("SELECT * from table_events ORDER BY activity ASC")
-    LiveData<List<EventsFavorites>> getAllEvents();
+    LiveData<List<EventsRoom>> getAllEvents();
 
 }

@@ -1,4 +1,4 @@
-package elior.com.infrastructure.pages.fragments;
+package elior.com.infrastructure.presentation.pages.fragments;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -14,15 +14,15 @@ import java.util.ArrayList;
 
 import elior.com.infrastructure.FavoritesGraphArgs;
 import elior.com.infrastructure.R;
-import elior.com.infrastructure.adapters.EventsFavoritesAdapter;
+import elior.com.infrastructure.data.room.EventsRoom;
+import elior.com.infrastructure.presentation.adapters.EventsFavoritesAdapter;
 import elior.com.infrastructure.databinding.FragmentFavoritesBinding;
-import elior.com.infrastructure.room.EventsFavorites;
-import elior.com.infrastructure.room.EventsViewModelFavorites;
+import elior.com.infrastructure.data.room.EventsViewModelRoom;
 
 public class FavoritesFragment extends BaseFragment {
 
     private FragmentFavoritesBinding binding;
-    private EventsViewModelFavorites eventsViewModelFavorites;
+    private EventsViewModelRoom eventsViewModelFavorites;
 
     @Nullable
     @Override
@@ -36,7 +36,7 @@ public class FavoritesFragment extends BaseFragment {
     }
 
     private void initUI() {
-        eventsViewModelFavorites = new EventsViewModelFavorites();
+        eventsViewModelFavorites = new EventsViewModelRoom();
     }
 
     private void setData() {
@@ -44,7 +44,7 @@ public class FavoritesFragment extends BaseFragment {
 //        Log.i("getData1", ((Events) getArguments().getSerializable("eventsData")).getActivity());
 
         eventsViewModelFavorites.getAllEvents().observe(getViewLifecycleOwner(), eventsFavorites -> {
-            EventsFavoritesAdapter eventsFavoritesAdapter = new EventsFavoritesAdapter((ArrayList<EventsFavorites>) eventsFavorites);
+            EventsFavoritesAdapter eventsFavoritesAdapter = new EventsFavoritesAdapter((ArrayList<EventsRoom>) eventsFavorites);
             binding.recyclerView.setAdapter(eventsFavoritesAdapter);
         });
     }

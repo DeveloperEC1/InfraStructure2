@@ -5,7 +5,7 @@
 
         <variable
             name="event"
-            type="elior.com.infrastructure.models.Events" />
+            type="elior.com.infrastructure.data.models.Events" />
     </data>
 
     <LinearLayout

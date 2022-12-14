@@ -1,4 +1,4 @@
-package elior.com.infrastructure.fragstates;
+package elior.com.infrastructure.data.fragstates;
 
 public class EventsFragState {
 

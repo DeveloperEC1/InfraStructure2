@@ -1,4 +1,4 @@
-package elior.com.infrastructure.pages.fragments;
+package elior.com.infrastructure.presentation.pages.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,11 +11,11 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 
 import elior.com.infrastructure.R;
-import elior.com.infrastructure.adapters.EventsMainAdapter;
+import elior.com.infrastructure.presentation.adapters.EventsMainAdapter;
 import elior.com.infrastructure.databinding.FragmentMainBinding;
-import elior.com.infrastructure.fragstates.EventsFragState;
-import elior.com.infrastructure.others.Constants;
-import elior.com.infrastructure.viewmodels.EventsViewModel;
+import elior.com.infrastructure.data.fragstates.EventsFragState;
+import elior.com.infrastructure.core.Constants;
+import elior.com.infrastructure.presentation.pages.viewmodels.EventsViewModel;
 
 public class MainFragment extends BaseFragment {
 

@@ -1,4 +1,4 @@
-package elior.com.infrastructure.pages.activities;
+package elior.com.infrastructure.presentation.pages.activities;
 
 import android.os.Bundle;
 

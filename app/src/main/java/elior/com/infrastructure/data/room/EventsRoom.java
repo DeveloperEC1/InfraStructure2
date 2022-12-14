@@ -1,4 +1,4 @@
-package elior.com.infrastructure.room;
+package elior.com.infrastructure.data.room;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey;
 import java.io.Serializable;
 
 @Entity(tableName = "table_events", indices = @Index(value = {"activity"}, unique = true))
-public class EventsFavorites implements Serializable {
+public class EventsRoom implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "ID")

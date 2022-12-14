@@ -1,4 +1,4 @@
-package elior.com.infrastructure.adapters;
+package elior.com.infrastructure.presentation.adapters;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -13,9 +13,10 @@ import java.util.ArrayList;
 import elior.com.infrastructure.MainGraphDirections;
 import elior.com.infrastructure.R;
 import elior.com.infrastructure.databinding.AdapterEventsMainBinding;
-import elior.com.infrastructure.models.Events;
+import elior.com.infrastructure.data.models.Events;
+import elior.com.infrastructure.presentation.adapters.viewholders.EventsMainViewHolder;
 
-public class EventsMainAdapter extends RecyclerView.Adapter<ViewHolderMain> {
+public class EventsMainAdapter extends RecyclerView.Adapter<EventsMainViewHolder> {
 
     private final ArrayList<Events> eventsArrayList;
 
@@ -25,13 +26,13 @@ public class EventsMainAdapter extends RecyclerView.Adapter<ViewHolderMain> {
 
     @NonNull
     @Override
-    public ViewHolderMain onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public EventsMainViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         AdapterEventsMainBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.adapter_events_main, parent, false);
-        return new ViewHolderMain(binding);
+        return new EventsMainViewHolder(binding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolderMain holder, final int position) {
+    public void onBindViewHolder(@NonNull EventsMainViewHolder holder, final int position) {
         Events event = eventsArrayList.get(position);
 
         holder.binding.setEvent(event);

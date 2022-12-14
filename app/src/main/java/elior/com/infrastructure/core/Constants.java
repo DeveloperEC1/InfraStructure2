@@ -1,4 +1,4 @@
-package elior.com.infrastructure.others;
+package elior.com.infrastructure.core;
 
 public class Constants {
 

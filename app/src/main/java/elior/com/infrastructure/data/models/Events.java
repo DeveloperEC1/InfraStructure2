@@ -1,4 +1,4 @@
-package elior.com.infrastructure.models;
+package elior.com.infrastructure.data.models;
 
 import com.google.gson.annotations.SerializedName;
 

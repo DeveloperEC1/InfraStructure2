@@ -6,7 +6,7 @@
 
         <variable
             name="eventsViewModel"
-            type="elior.com.infrastructure.viewmodels.EventsViewModel" />
+            type="elior.com.infrastructure.presentation.pages.viewmodels.EventsViewModel" />
     </data>
 
     <LinearLayout

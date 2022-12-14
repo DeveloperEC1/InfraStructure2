@@ -1,14 +1,14 @@
-package elior.com.infrastructure.adapters;
+package elior.com.infrastructure.presentation.adapters.viewholders;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import elior.com.infrastructure.databinding.AdapterEventsMainBinding;
 
-public class ViewHolderMain extends RecyclerView.ViewHolder {
+public class EventsMainViewHolder extends RecyclerView.ViewHolder {
 
     public AdapterEventsMainBinding binding;
 
-    public ViewHolderMain(AdapterEventsMainBinding itemBinding) {
+    public EventsMainViewHolder(AdapterEventsMainBinding itemBinding) {
         super(itemBinding.getRoot());
 
         this.binding = itemBinding;
