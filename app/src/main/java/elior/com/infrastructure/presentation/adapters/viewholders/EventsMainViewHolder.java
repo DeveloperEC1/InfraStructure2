@@ -11,7 +11,7 @@ public class EventsMainViewHolder extends RecyclerView.ViewHolder {
     public EventsMainViewHolder(AdapterEventsMainBinding itemBinding) {
         super(itemBinding.getRoot());
 
-        this.binding = itemBinding;
+        binding = itemBinding;
     }
 
 }

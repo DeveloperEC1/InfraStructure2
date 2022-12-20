@@ -11,7 +11,7 @@ public class EventsFavoritesViewHolder extends RecyclerView.ViewHolder {
     public EventsFavoritesViewHolder(AdapterEventsFavoritesBinding itemBinding) {
         super(itemBinding.getRoot());
 
-        this.binding = itemBinding;
+        binding = itemBinding;
     }
 
 }
