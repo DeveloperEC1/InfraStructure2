@@ -59,7 +59,7 @@ public class EventsViewModel extends ViewModel {
         });
     }
 
-    public void saveToLocalData() {
+    public void saveDataToLocalData() {
         EventsViewModelRoom eventsViewModelFavorites = new EventsViewModelRoom();
 
         EventsRoom eventsFavorites = new EventsRoom();

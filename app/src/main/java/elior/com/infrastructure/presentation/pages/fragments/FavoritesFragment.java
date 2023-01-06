@@ -22,21 +22,19 @@ import elior.com.infrastructure.data.room.EventsViewModelRoom;
 public class FavoritesFragment extends BaseFragment {
 
     private FragmentFavoritesBinding binding;
-    private EventsViewModelRoom eventsViewModelFavorites;
+    private final EventsViewModelRoom eventsViewModelFavorites = new EventsViewModelRoom();
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_favorites, container, false);
-
-        initUI();
+        initDataBinding(inflater, container);
         setData();
 
         return binding.getRoot();
     }
 
-    private void initUI() {
-        eventsViewModelFavorites = new EventsViewModelRoom();
+    private void initDataBinding(LayoutInflater inflater, ViewGroup container) {
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_favorites, container, false);
     }
 
     private void setData() {

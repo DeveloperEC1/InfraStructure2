@@ -9,6 +9,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Observer;
 
 import elior.com.infrastructure.R;
 import elior.com.infrastructure.presentation.adapters.EventsMainAdapter;
@@ -22,7 +23,7 @@ public class MainFragment extends BaseFragment {
     private FragmentMainBinding binding;
     private final EventsViewModel eventsViewModel = new EventsViewModel();
 
-    private final androidx.lifecycle.Observer<EventsFragState> mObserver = eventsFragState -> {
+    private final Observer<EventsFragState> mObserver = eventsFragState -> {
         if (eventsFragState != null) {
             if (!eventsFragState.isHasBeenViewed()) {
                 if (eventsFragState.isOk()) {
@@ -30,8 +31,7 @@ public class MainFragment extends BaseFragment {
                         case Constants.Events:
 
                             setData();
-
-                            eventsViewModel.saveToLocalData();
+                            saveDataToLocalData();
                             break;
                     }
                 } else {
@@ -53,11 +53,9 @@ public class MainFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false);
-        binding.setEventsViewModel(eventsViewModel);
-        binding.setLifecycleOwner(this);
-
-        initUI();
+        initDataBinding(inflater, container);
+        connectObserverToViewModel();
+        callGetAllActivitiesEndPoint();
 
         return binding.getRoot();
     }
@@ -66,19 +64,36 @@ public class MainFragment extends BaseFragment {
     public void onDestroy() {
         super.onDestroy();
 
+        removeObserverFromViewModel();
+    }
+
+    private void initDataBinding(LayoutInflater inflater, ViewGroup container) {
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false);
+        binding.setEventsViewModel(eventsViewModel);
+        binding.setLifecycleOwner(this);
+    }
+
+    private void connectObserverToViewModel() {
+        eventsViewModel.getEventsFragStateMutableLiveData().observe(getViewLifecycleOwner(), mObserver);
+    }
+
+    private void removeObserverFromViewModel() {
         eventsViewModel.getEventsFragStateMutableLiveData().removeObserver(mObserver);
     }
 
-    private void initUI() {
-        eventsViewModel.getEventsFragStateMutableLiveData().observe(getViewLifecycleOwner(), mObserver);
+    private void callGetAllActivitiesEndPoint() {
+        showProgressDialog(activity.getResources().getString(R.string.loading_your_data));
 
         eventsViewModel.getAllActivities();
-
-        showProgressDialog(activity.getResources().getString(R.string.loading_your_data));
     }
 
     private void setData() {
         EventsMainAdapter eventsMainAdapter = new EventsMainAdapter(eventsViewModel.getDummyData());
         binding.recyclerView.setAdapter(eventsMainAdapter);
     }
+
+    private void saveDataToLocalData() {
+        eventsViewModel.saveDataToLocalData();
+    }
+
 }
