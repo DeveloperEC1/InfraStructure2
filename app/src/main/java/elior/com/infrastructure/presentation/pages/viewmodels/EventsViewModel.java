@@ -70,9 +70,8 @@ public class EventsViewModel extends ViewModel {
     }
 
     public void saveDataToLocalData() {
-        EventsViewModelRoom eventsViewModelFavorites = new EventsViewModelRoom();
-
         EventsRoom eventsFavorites = new EventsRoom();
+        EventsViewModelRoom eventsViewModelFavorites = new EventsViewModelRoom();
 
         for (Events events : getDummyData()) {
             eventsFavorites.setActivity(events.getActivity());
