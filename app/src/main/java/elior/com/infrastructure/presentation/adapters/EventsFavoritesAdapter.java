@@ -1,5 +1,6 @@
 package elior.com.infrastructure.presentation.adapters;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -8,6 +9,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import elior.com.infrastructure.R;
 import elior.com.infrastructure.data.room.EventsRoom;
@@ -16,11 +18,7 @@ import elior.com.infrastructure.presentation.adapters.viewholders.EventsFavorite
 
 public class EventsFavoritesAdapter extends RecyclerView.Adapter<EventsFavoritesViewHolder> {
 
-    private final ArrayList<EventsRoom> eventsFavoritesArrayList;
-
-    public EventsFavoritesAdapter(ArrayList<EventsRoom> eventsFavoritesArrayList) {
-        this.eventsFavoritesArrayList = eventsFavoritesArrayList;
-    }
+    private List<EventsRoom> eventsFavoritesArrayList;
 
     @NonNull
     @Override
@@ -41,6 +39,12 @@ public class EventsFavoritesAdapter extends RecyclerView.Adapter<EventsFavorites
         if (eventsFavoritesArrayList != null)
             return eventsFavoritesArrayList.size();
         else return 0;
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void setData(List<EventsRoom> eventsFavoritesArrayList) {
+        this.eventsFavoritesArrayList = eventsFavoritesArrayList;
+        notifyDataSetChanged();
     }
 
 }

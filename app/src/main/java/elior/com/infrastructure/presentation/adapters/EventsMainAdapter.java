@@ -1,5 +1,6 @@
 package elior.com.infrastructure.presentation.adapters;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -18,11 +19,7 @@ import elior.com.infrastructure.presentation.adapters.viewholders.EventsMainView
 
 public class EventsMainAdapter extends RecyclerView.Adapter<EventsMainViewHolder> {
 
-    private final ArrayList<Events> eventsArrayList;
-
-    public EventsMainAdapter(ArrayList<Events> eventsArrayList) {
-        this.eventsArrayList = eventsArrayList;
-    }
+    private ArrayList<Events> eventsArrayList;
 
     @NonNull
     @Override
@@ -51,6 +48,12 @@ public class EventsMainAdapter extends RecyclerView.Adapter<EventsMainViewHolder
         if (eventsArrayList != null)
             return eventsArrayList.size();
         else return 0;
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void setData(ArrayList<Events> eventsArrayList) {
+        this.eventsArrayList = eventsArrayList;
+        notifyDataSetChanged();
     }
 
 }

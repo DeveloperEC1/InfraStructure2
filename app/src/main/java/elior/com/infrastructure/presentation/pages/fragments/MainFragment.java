@@ -12,10 +12,9 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 
 import elior.com.infrastructure.R;
-import elior.com.infrastructure.presentation.adapters.EventsMainAdapter;
-import elior.com.infrastructure.databinding.FragmentMainBinding;
-import elior.com.infrastructure.data.fragstates.EventsFragState;
 import elior.com.infrastructure.core.Constants;
+import elior.com.infrastructure.data.fragstates.EventsFragState;
+import elior.com.infrastructure.databinding.FragmentMainBinding;
 import elior.com.infrastructure.presentation.pages.viewmodels.EventsViewModel;
 
 public class MainFragment extends BaseFragment {
@@ -88,8 +87,7 @@ public class MainFragment extends BaseFragment {
     }
 
     private void setData() {
-        EventsMainAdapter eventsMainAdapter = new EventsMainAdapter(eventsViewModel.getDummyData());
-        binding.recyclerView.setAdapter(eventsMainAdapter);
+        eventsViewModel.getEventsMainAdapter().setData(eventsViewModel.getDummyData());
     }
 
     private void saveDataToLocalData() {

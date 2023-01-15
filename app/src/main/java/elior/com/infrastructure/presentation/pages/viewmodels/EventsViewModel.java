@@ -13,6 +13,7 @@ import elior.com.infrastructure.data.models.Events;
 import elior.com.infrastructure.core.Constants;
 import elior.com.infrastructure.data.room.EventsRoom;
 import elior.com.infrastructure.data.room.EventsViewModelRoom;
+import elior.com.infrastructure.presentation.adapters.EventsMainAdapter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -21,6 +22,7 @@ public class EventsViewModel extends ViewModel {
 
     private final MutableLiveData<EventsFragState> eventsFragStateMutableLiveData = new MutableLiveData<>();
     private final MutableLiveData<String> text = new MutableLiveData<>();
+    private EventsMainAdapter eventsMainAdapter = new EventsMainAdapter();
     private Events events;
 
     public MutableLiveData<EventsFragState> getEventsFragStateMutableLiveData() {
@@ -29,6 +31,14 @@ public class EventsViewModel extends ViewModel {
 
     public MutableLiveData<String> getText() {
         return text;
+    }
+
+    public EventsMainAdapter getEventsMainAdapter() {
+        return eventsMainAdapter;
+    }
+
+    public void setEventsMainAdapter(EventsMainAdapter eventsMainAdapter) {
+        this.eventsMainAdapter = eventsMainAdapter;
     }
 
     public Events getEvents() {
