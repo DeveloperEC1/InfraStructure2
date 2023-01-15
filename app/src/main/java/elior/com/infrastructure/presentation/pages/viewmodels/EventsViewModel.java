@@ -59,7 +59,7 @@ public class EventsViewModel extends ViewModel {
             public void onResponse(@NonNull Call<Events> call, @NonNull Response<Events> response) {
                 setEvents(response.body());
 
-                postPositiveResponse(Constants.Events);
+                postPositiveResponse(Constants.EVENTS);
             }
 
             @Override

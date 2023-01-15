@@ -27,7 +27,7 @@ public class MainFragment extends BaseFragment {
             if (!eventsFragState.isHasBeenViewed()) {
                 if (eventsFragState.isOk()) {
                     switch (eventsFragState.getState()) {
-                        case Constants.Events:
+                        case Constants.EVENTS:
 
                             setData();
                             saveDataToLocalData();
