@@ -86,7 +86,7 @@ public class EventsViewModel extends ViewModel {
 
 //        Events results = new Events();
 //        results.setActivity("Elior");
-//
+
         eventsArrayList.add(events);
 
         return eventsArrayList;
