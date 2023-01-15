@@ -19,7 +19,7 @@ import elior.com.infrastructure.presentation.adapters.viewholders.EventsMainView
 
 public class EventsMainAdapter extends RecyclerView.Adapter<EventsMainViewHolder> {
 
-    private ArrayList<Events> eventsArrayList;
+    private ArrayList<Events> eventsArrayList = new ArrayList<>();
 
     @NonNull
     @Override

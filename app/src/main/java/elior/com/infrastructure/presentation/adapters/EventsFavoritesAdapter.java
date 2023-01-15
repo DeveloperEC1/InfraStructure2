@@ -18,7 +18,7 @@ import elior.com.infrastructure.presentation.adapters.viewholders.EventsFavorite
 
 public class EventsFavoritesAdapter extends RecyclerView.Adapter<EventsFavoritesViewHolder> {
 
-    private List<EventsRoom> eventsFavoritesArrayList;
+    private List<EventsRoom> eventsFavoritesArrayList = new ArrayList<>();
 
     @NonNull
     @Override
