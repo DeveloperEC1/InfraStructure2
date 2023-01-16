@@ -1,5 +1,7 @@
 package elior.com.infrastructure.presentation.pages.fragments;
 
+import static elior.com.infrastructure.core.Constants.TAG;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -38,8 +40,8 @@ public class FavoritesFragment extends BaseFragment {
     }
 
     private void setData() {
-        Log.i("getData1", FavoritesGraphArgs.fromBundle(getArguments()).getEventsData().getActivity());
-//        Log.i("getData1", ((Events) getArguments().getSerializable("eventsData")).getActivity());
+        Log.i(TAG, FavoritesGraphArgs.fromBundle(getArguments()).getEventsData().getActivity());
+//        Log.i(TAG, ((Events) getArguments().getSerializable("eventsData")).getActivity());
 
         eventsViewModelFavorites.getAllEvents().observe(getViewLifecycleOwner(), eventsFavorites -> favoritesViewModel.getEventsFavoritesAdapter().setData(eventsFavorites));
     }
