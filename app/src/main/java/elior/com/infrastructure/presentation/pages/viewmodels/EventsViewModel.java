@@ -22,7 +22,7 @@ public class EventsViewModel extends ViewModel {
 
     private final MutableLiveData<EventsFragState> eventsFragStateMutableLiveData = new MutableLiveData<>();
     private final MutableLiveData<String> text = new MutableLiveData<>();
-    private EventsMainAdapter eventsMainAdapter = new EventsMainAdapter();
+    private final EventsMainAdapter eventsMainAdapter = new EventsMainAdapter();
     private Events events = new Events();
 
     public MutableLiveData<EventsFragState> getEventsFragStateMutableLiveData() {
@@ -35,10 +35,6 @@ public class EventsViewModel extends ViewModel {
 
     public EventsMainAdapter getEventsMainAdapter() {
         return eventsMainAdapter;
-    }
-
-    public void setEventsMainAdapter(EventsMainAdapter eventsMainAdapter) {
-        this.eventsMainAdapter = eventsMainAdapter;
     }
 
     public Events getEvents() {
