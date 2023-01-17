@@ -1,4 +1,4 @@
-package elior.com.infrastructure.presentation.pages.fragments;
+package elior.com.infrastructure.presentation.pages.fragments.events_fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,10 +15,10 @@ import elior.com.infrastructure.R;
 import elior.com.infrastructure.core.Constants;
 import elior.com.infrastructure.data.fragstates.EventsFragState;
 import elior.com.infrastructure.databinding.FragmentMainBinding;
-import elior.com.infrastructure.presentation.pages.viewmodels.EventsViewModel;
-import elior.com.infrastructure.presentation.pages.viewmodels.ViewModelManager;
+import elior.com.infrastructure.presentation.pages.fragments.BaseFragment;
+import elior.com.infrastructure.data.managers.ViewModelManager;
 
-public class MainFragment extends BaseFragment {
+public class EventsFragment extends BaseFragment {
 
     private FragmentMainBinding binding;
     private final EventsViewModel eventsViewModel = ViewModelManager.instance.getEventsViewModel();

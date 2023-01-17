@@ -1,4 +1,4 @@
-package elior.com.infrastructure.presentation.pages.viewmodels;
+package elior.com.infrastructure.presentation.pages.fragments.favorites_fragment;
 
 import androidx.lifecycle.ViewModel;
 

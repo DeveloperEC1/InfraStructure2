@@ -1,9 +1,11 @@
-package elior.com.infrastructure.presentation.pages.viewmodels;
+package elior.com.infrastructure.data.managers;
 
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import elior.com.infrastructure.data.room.EventsViewModelRoom;
+import elior.com.infrastructure.presentation.pages.fragments.events_fragment.EventsViewModel;
+import elior.com.infrastructure.presentation.pages.fragments.favorites_fragment.FavoritesViewModel;
 
 public class ViewModelManager {
 

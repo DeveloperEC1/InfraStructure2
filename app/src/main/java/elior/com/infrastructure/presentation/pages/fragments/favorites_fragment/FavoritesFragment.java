@@ -1,4 +1,4 @@
-package elior.com.infrastructure.presentation.pages.fragments;
+package elior.com.infrastructure.presentation.pages.fragments.favorites_fragment;
 
 import static elior.com.infrastructure.core.Constants.TAG;
 
@@ -16,8 +16,8 @@ import elior.com.infrastructure.FavoritesGraphArgs;
 import elior.com.infrastructure.R;
 import elior.com.infrastructure.data.room.EventsViewModelRoom;
 import elior.com.infrastructure.databinding.FragmentFavoritesBinding;
-import elior.com.infrastructure.presentation.pages.viewmodels.FavoritesViewModel;
-import elior.com.infrastructure.presentation.pages.viewmodels.ViewModelManager;
+import elior.com.infrastructure.presentation.pages.fragments.BaseFragment;
+import elior.com.infrastructure.data.managers.ViewModelManager;
 
 public class FavoritesFragment extends BaseFragment {
 

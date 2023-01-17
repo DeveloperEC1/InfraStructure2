@@ -3,7 +3,7 @@ package elior.com.infrastructure.presentation.pages.activities;
 import android.os.Bundle;
 
 import elior.com.infrastructure.R;
-import elior.com.infrastructure.presentation.pages.viewmodels.ViewModelManager;
+import elior.com.infrastructure.data.managers.ViewModelManager;
 
 public class MainActivity extends BaseActivity {
 

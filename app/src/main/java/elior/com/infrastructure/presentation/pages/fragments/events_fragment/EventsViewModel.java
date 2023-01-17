@@ -1,4 +1,4 @@
-package elior.com.infrastructure.presentation.pages.viewmodels;
+package elior.com.infrastructure.presentation.pages.fragments.events_fragment;
 
 import static elior.com.infrastructure.data.retrofit.RetrofitClientInstance.getRetrofitClientInstance;
 

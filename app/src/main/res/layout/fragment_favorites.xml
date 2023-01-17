@@ -6,7 +6,7 @@
 
         <variable
             name="favoritesViewModel"
-            type="elior.com.infrastructure.presentation.pages.viewmodels.FavoritesViewModel" />
+            type="elior.com.infrastructure.presentation.pages.fragments.favorites_fragment.FavoritesViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
