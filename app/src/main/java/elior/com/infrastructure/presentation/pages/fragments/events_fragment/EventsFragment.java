@@ -14,13 +14,13 @@ import androidx.lifecycle.Observer;
 import elior.com.infrastructure.R;
 import elior.com.infrastructure.core.Constants;
 import elior.com.infrastructure.data.fragstates.EventsFragState;
-import elior.com.infrastructure.databinding.FragmentMainBinding;
+import elior.com.infrastructure.databinding.FragmentEventsBinding;
 import elior.com.infrastructure.presentation.pages.fragments.BaseFragment;
 import elior.com.infrastructure.data.managers.ViewModelManager;
 
 public class EventsFragment extends BaseFragment {
 
-    private FragmentMainBinding binding;
+    private FragmentEventsBinding binding;
     private final EventsViewModel eventsViewModel = ViewModelManager.instance.getEventsViewModel();
 
     private final Observer<EventsFragState> mObserver = eventsFragState -> {
@@ -66,7 +66,7 @@ public class EventsFragment extends BaseFragment {
     }
 
     private void initDataBinding(LayoutInflater inflater, ViewGroup container) {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_events, container, false);
         binding.setEventsViewModel(eventsViewModel);
         binding.setLifecycleOwner(this);
     }

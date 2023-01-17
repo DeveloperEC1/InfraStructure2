@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import elior.com.infrastructure.MainGraphDirections;
+import elior.com.infrastructure.EventsGraphDirections;
 import elior.com.infrastructure.R;
 import elior.com.infrastructure.databinding.AdapterEventsMainBinding;
 import elior.com.infrastructure.data.models.Events;
@@ -35,7 +35,7 @@ public class EventsMainAdapter extends RecyclerView.Adapter<EventsMainViewHolder
         holder.binding.setEvent(event);
 
         holder.itemView.setOnClickListener(view -> {
-            Navigation.findNavController(view).navigate(MainGraphDirections.actionNavigateToFavoritesFragment(event));
+            Navigation.findNavController(view).navigate(EventsGraphDirections.actionNavigateToFavoritesFragment(event));
 
 //            Bundle bundle = new Bundle();
 //            bundle.putSerializable("eventsData", events);
