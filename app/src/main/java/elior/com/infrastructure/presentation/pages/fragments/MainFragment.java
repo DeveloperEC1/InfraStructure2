@@ -16,11 +16,12 @@ import elior.com.infrastructure.core.Constants;
 import elior.com.infrastructure.data.fragstates.EventsFragState;
 import elior.com.infrastructure.databinding.FragmentMainBinding;
 import elior.com.infrastructure.presentation.pages.viewmodels.EventsViewModel;
+import elior.com.infrastructure.presentation.pages.viewmodels.ViewModelManager;
 
 public class MainFragment extends BaseFragment {
 
     private FragmentMainBinding binding;
-    private final EventsViewModel eventsViewModel = new EventsViewModel();
+    private final EventsViewModel eventsViewModel = ViewModelManager.instance.getEventsViewModel();
 
     private final Observer<EventsFragState> mObserver = eventsFragState -> {
         if (eventsFragState != null) {
@@ -29,8 +30,6 @@ public class MainFragment extends BaseFragment {
                     switch (eventsFragState.getState()) {
                         case Constants.EVENTS:
 
-                            setData();
-                            saveDataToLocalData();
                             break;
                     }
                 } else {
@@ -84,14 +83,6 @@ public class MainFragment extends BaseFragment {
         showProgressDialog(activity.getResources().getString(R.string.loading_your_data));
 
         eventsViewModel.getAllActivities();
-    }
-
-    private void setData() {
-        eventsViewModel.getEventsMainAdapter().setData(eventsViewModel.getDummyData());
-    }
-
-    private void saveDataToLocalData() {
-        eventsViewModel.saveDataToLocalData();
     }
 
 }

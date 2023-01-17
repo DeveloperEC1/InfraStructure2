@@ -8,9 +8,9 @@ import androidx.lifecycle.ViewModel;
 
 import java.util.ArrayList;
 
+import elior.com.infrastructure.core.Constants;
 import elior.com.infrastructure.data.fragstates.EventsFragState;
 import elior.com.infrastructure.data.models.Events;
-import elior.com.infrastructure.core.Constants;
 import elior.com.infrastructure.data.room.EventsRoom;
 import elior.com.infrastructure.data.room.EventsViewModelRoom;
 import elior.com.infrastructure.presentation.adapters.EventsMainAdapter;
@@ -23,7 +23,7 @@ public class EventsViewModel extends ViewModel {
     private final MutableLiveData<EventsFragState> eventsFragStateMutableLiveData = new MutableLiveData<>();
     private final MutableLiveData<String> text = new MutableLiveData<>();
     private EventsMainAdapter eventsMainAdapter = new EventsMainAdapter();
-    private Events events;
+    private Events events = new Events();
 
     public MutableLiveData<EventsFragState> getEventsFragStateMutableLiveData() {
         return eventsFragStateMutableLiveData;
@@ -58,6 +58,8 @@ public class EventsViewModel extends ViewModel {
             @Override
             public void onResponse(@NonNull Call<Events> call, @NonNull Response<Events> response) {
                 setEvents(response.body());
+                getEventsMainAdapter().setData(getDummyData());
+                saveDataToLocalData();
 
                 postPositiveResponse(Constants.EVENTS);
             }
