@@ -1,4 +1,4 @@
-package elior.com.infrastructure.presentation.adapters.viewholders;
+package elior.com.infrastructure.presentation.adapters.view_holders;
 
 import androidx.recyclerview.widget.RecyclerView;
 

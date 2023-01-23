@@ -14,7 +14,7 @@ import java.util.List;
 import elior.com.infrastructure.R;
 import elior.com.infrastructure.data.room.EventsRoom;
 import elior.com.infrastructure.databinding.AdapterEventsFavoritesBinding;
-import elior.com.infrastructure.presentation.adapters.viewholders.EventsFavoritesViewHolder;
+import elior.com.infrastructure.presentation.adapters.view_holders.EventsFavoritesViewHolder;
 
 public class EventsFavoritesAdapter extends RecyclerView.Adapter<EventsFavoritesViewHolder> {
 
