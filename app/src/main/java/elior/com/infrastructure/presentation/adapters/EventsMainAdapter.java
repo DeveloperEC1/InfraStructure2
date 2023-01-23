@@ -15,7 +15,7 @@ import elior.com.infrastructure.EventsGraphDirections;
 import elior.com.infrastructure.R;
 import elior.com.infrastructure.databinding.AdapterEventsMainBinding;
 import elior.com.infrastructure.data.models.Events;
-import elior.com.infrastructure.presentation.adapters.viewholders.EventsMainViewHolder;
+import elior.com.infrastructure.presentation.adapters.view_holders.EventsMainViewHolder;
 
 public class EventsMainAdapter extends RecyclerView.Adapter<EventsMainViewHolder> {
 
